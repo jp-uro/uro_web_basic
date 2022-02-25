@@ -1,0 +1,206 @@
+/* AWAKE */
+
+.awake {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.awake_inner {
+    width: 100px;
+    height: 100px;
+    margin: 200px auto;
+    background-color: #fff;
+    border-radius: 100%;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+.awake_end {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes sk-scaleout {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+/* BACKGROUND */
+
+.background {
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background_inner {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/background_main.jpg) no-repeat left center fixed;
+    background-size: cover;
+    -webkit-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+}
+
+/* Other */
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.3rem;
+}
+p {
+    line-height: 1.7;
+    letter-spacing: 0.1rem;
+}
+
+/* HEADER */
+header {
+    height: 100vh;
+}
+.header_inner {
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.anim_side_left {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+    -webkit-transform: translateX(-10vh);
+    -ms-transform: translateX(-10vh);
+    transform: translateX(-10vh);
+    opacity: 0;
+}
+.anim_side_left.anim_play {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.scroll_anim {
+    opacity: 0;
+}
+
+.scroll_anim.show {
+    animation: leftFadeIn 0.5s ease 1s 1 normal backwards;
+    opacity: 1;
+}
+@keyframes leftFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+/* Member */
+.person {
+    width: 100%;
+    overflow: hidden;
+    width: 100%;
+    height: 24rem;
+}
+.link_box {
+    top: 0;
+    left: 0;
+    width:0;
+    height:100%;
+    z-index: 10;
+    transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    background: -webkit-linear-gradient(left, rgb(0, 0, 0) 1%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(1%, rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
+    background: -o-linear-gradient(left, rgb(0, 0, 0) 1%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to right, rgb(0, 0, 0) 1%, rgba(0, 0, 0, 0) 100%);
+}
+.link_box_inner {
+    top: 20%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+.link_box_inner h2 {
+    opacity: 0;
+    margin: 0;
+    transform: translateX(5rem);
+    -webkit-transform: translateX(5rem);
+    -ms-transform: translateX(5rem);
+}
+.person:hover .link_box_inner h2 {
+    opacity: 1;
+    transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+    transition: 0.75s ease 0.5s;
+    -webkit-transition: 0.75s ease 0.5s;
+    -o-transition: 0.75s ease 0.5s;
+}
+.link_box_inner p {
+    opacity: 0;
+    transform: translateX(5rem);
+    -webkit-transform: translateX(5rem);
+    -ms-transform: translateX(5rem);
+}
+.person:hover .link_box_inner p {
+    opacity: 1;
+    transition: 1s ease 0.75s;
+    -webkit-transition: 1s ease 0.75s;
+    -o-transition: 1s ease 0.75s;
+    transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+}
+
+.person:hover .link_box {
+    width: 100%;
+}
+
+.link_box_background {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+
+/* FeatherLight */
+.featherlight .featherlight-content {
+    background: rgba(0, 0, 0, 0.7);
+}
+.featherlight .featherlight-content .featherlight-close-icon {
+    font-size: 2.5rem;
+    top: 3vh;
+    right: 3vh;
+    width: 2.5rem;
+    transform: translate(50%, -50%);
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    color: #fff;
+    background: none;
+}
