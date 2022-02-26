@@ -1,3 +1,7 @@
+$('.background_inner').css({
+    'background-image': 'url(' + convert_hdpi("src/img/background_main.jpg") + ')'
+});
+
 $(window).on('load', function () {
     document.querySelector('.awake').classList.add('awake_end');
     setTimeout(function () {
@@ -5,7 +9,6 @@ $(window).on('load', function () {
         for (let i = 0; i < animation_container.length; i++) {
             setTimeout(function () {
                 animation_container[i].classList.add('anim_play');
-                console.log("Played");
             }, animation_container[i].dataset.animDelay);
         }
     }, 700);
@@ -23,20 +26,30 @@ document.addEventListener('DOMContentLoaded', function () {
             triggerHook: 0.8,
             reverse: false
         })
-        .setClassToggle(anim_elements[i], 'show')
-        .addTo(sm_controllers[i]);
+            .setClassToggle(anim_elements[i], 'show')
+            .addTo(sm_controllers[i]);
     }
 });
 
 function arrayShuffle(array) {
-    for(var i = (array.length - 1); 0 < i; i--){
-      var r = Math.floor(Math.random() * (i + 1));
-      var tmp = array[i];
-      array[i] = array[r];
-      array[r] = tmp;
+    for (var i = (array.length - 1); 0 < i; i--) {
+        var r = Math.floor(Math.random() * (i + 1));
+        var tmp = array[i];
+        array[i] = array[r];
+        array[r] = tmp;
     }
     return array;
-  }
+}
+
+function convert_hdpi(file_name) {
+    const pixel_ratio = window.devicePixelRatio;
+    if (pixel_ratio >= 1.5) {
+        file_name = file_name.replace('.jpg', '@1.5x.jpg');
+    } else if (pixel_ratio >= 2) {
+        file_name = file_name.replace('.jpg', '@2x.jpg');
+    }
+    return file_name;
+}
 
 let persons = [
     ['Hiramatsu_Reina', 'ヒラマツレイナ', '企画', 'ヒラマツヒラマツヒラマツヒラマツヒラマツヒラマツ', 'reina.jpg'],
@@ -54,6 +67,7 @@ for (const element of persons) {
     let name = element[1];
     let job = element[2];
     let description = element[3];
+    let img = convert_hdpi(element[4]);
     let html = `
 <div class="person scroll_anim position-relative my-5">
     <a href="#" class="btn btn-link text-white" data-featherlight="#person-${i}-window">
@@ -63,10 +77,10 @@ for (const element of persons) {
                 <p class="position-relative">${job}</p>
             </div>
         </div>
-        <div class="link_box_background position-absolute" style="background-image: url(src/img/profile/${element[4]})"></div>
+        <div class="link_box_background position-absolute" style="background-image: url(src/img/profile/${img})"></div>
     </a>
     <div id="person-${i}-window" class="window text-light">
-        <img class="mb-3" src="src/img/profile/${element[4]}" alt="${name}画像">
+        <img class="mb-3" src="src/img/profile/${img}" alt="${name}画像">
         <h3 class="mb-1">${name}</h3>
         <p class="mb-1">${job}</p>
         <p class="mb-1">${description}</p>
