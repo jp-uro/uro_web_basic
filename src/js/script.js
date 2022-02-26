@@ -1,7 +1,3 @@
-$('.background_inner').css({
-    'background-image': 'url(' + convert_hdpi("src/img/background_main.jpg") + ')'
-});
-
 $(window).on('load', function () {
     document.querySelector('.awake').classList.add('awake_end');
     setTimeout(function () {
