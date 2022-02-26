@@ -65,7 +65,7 @@ for (const element of persons) {
         </div>
         <div class="link_box_background position-absolute" style="background-image: url(src/img/profile/${element[4]})"></div>
     </a>
-    <div id="person-${i}-window" class="window text-light px-5 py-3">
+    <div id="person-${i}-window" class="window text-light">
         <img class="mb-3" src="src/img/profile/${element[4]}" alt="${name}画像">
         <h3 class="mb-1">${name}</h3>
         <p class="mb-1">${job}</p>

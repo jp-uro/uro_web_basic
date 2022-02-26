@@ -192,6 +192,7 @@ header {
 /* FeatherLight */
 .featherlight .featherlight-content {
     background: rgba(0, 0, 0, 0.7);
+    padding: 2.5rem 5rem;
 }
 .featherlight .featherlight-content .featherlight-close-icon {
     font-size: 2.5rem;
@@ -203,4 +204,44 @@ header {
     -ms-transform: translate(50%, -50%);
     color: #fff;
     background: none;
+}
+@media (max-width: 900px) {
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: 0.3rem;
+    }
+    p {
+        line-height: 1.4;
+        letter-spacing: 0.04rem;
+    }
+    main h2 {
+        margin: 1rem;
+    }
+    main p {
+        margin: 1rem;
+        font-size: 0.9rem;
+    }
+    .featherlight .featherlight-content {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .featherlight .featherlight-content img {
+        margin-top: 2.5rem;
+        width: 100%;
+    }
+    .featherlight .featherlight-content h3 {
+        margin: 1rem 2rem;
+    }
+    .featherlight .featherlight-content p {
+        margin: 1rem 2rem;
+    }
+    .text-light .featherlight-inner {
+        padding-top: 2.5rem;
+        width: 100%;
+        height: 100%;
+    }
+    .featherlight .featherlight-content .featherlight-close-icon {
+        width: 2.5rem;
+    }
 }
