@@ -135,6 +135,10 @@ header {
     }
   }
 
+header img {
+    width: 300px;
+}
+
 /* Member */
 .person {
     width: 100%;
@@ -235,6 +239,9 @@ header {
     p {
         line-height: 1.4;
         letter-spacing: 0.04rem;
+    }
+    header img {
+        width: 75%;
     }
     main h2 {
         margin: 1rem;
